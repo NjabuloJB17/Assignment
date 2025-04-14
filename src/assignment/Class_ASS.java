@@ -17,7 +17,7 @@ public class Class_ASS {
 
 private String password;
 private String username;
-private int phone;
+private String phone;
 private String name;
 private String surname;
 
@@ -38,11 +38,11 @@ public void setPassword(String password){
       return password;
     }
 
-public void setPhone(int phone ){
+public void setPhone(String phone ){
         this.phone = phone;
     }
    
-    public int getPhone(){
+    public String getPhone(){
       return phone;
     }
 public void setName(String name){
@@ -78,9 +78,9 @@ public void setName(String name){
         return matcher.matches();
     } // Method to validate the password
 
-  public  boolean checkCellPhoneNumber(int phone) {
+  public  boolean checkCellPhoneNumber(String phone) {
         // Define the regex pattern for password validation
-        String cell = "^(?:\+27|0)(\d{9})$";
+        String cell = "^\\+27\\d{9}$";
         
         // Compile the pattern and match the password
         Pattern pattern = Pattern.compile(cell);
@@ -105,10 +105,14 @@ public void setName(String name){
       
       return secUsername.equals(this.username) && secPassword.equals(this.password);
   }
-  public String returnLoginStatus (){
+  public String returnLoginStatus (boolean successfully){
+      if(successfully){
+       return "A successful login";
+      } else{
+        return  "A failed login";
+      }
       
-      
-      return
+         
   }
 }  
 

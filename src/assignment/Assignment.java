@@ -22,18 +22,20 @@ public class Assignment {
 
           
         
-        
+        //
         System.out.print("Please enter your username: ");
            String username = input.nextLine();
            user.setUsername (username);
            System.out.println("Please enter your Password: ");
            String password = input.nextLine();
            user.setPassword (password);
-          
+          System.out.print("Please your Phone Number");
+          String phone = input.nextLine();
+          user.setPhone (phone);
         
  //password vaildation within a method 
        //fgshfsh String password = "Password123!"; // Example password
-        
+        //while
         if (user.checkPasswordComplexity(password)) {
             System.out.println("Password suucessfully captured");
         } else {
@@ -51,6 +53,8 @@ public class Assignment {
             System.out.println("Cell phone number incorrectly formatted or does not contain international code");
         }
     
+            
+            //
   System.out.print("Please enternYour Name: ");
   String name = input.nextLine();
   user.setName (name);
