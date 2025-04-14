@@ -14,9 +14,9 @@ import java.util.regex.Pattern;
 public class Class_ASS {
       
 
-
+ 
 private String password;
-private String username;
+private String username;                         
 private String phone;
 private String name;
 private String surname;

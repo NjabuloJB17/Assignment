@@ -22,7 +22,7 @@ public class Assignment {
 
           
         
-        //
+        //enter password, username and phone number
         System.out.print("Please enter your username: ");
            String username = input.nextLine();
            user.setUsername (username);
@@ -33,20 +33,20 @@ public class Assignment {
           String phone = input.nextLine();
           user.setPhone (phone);
         
- //password vaildation within a method 
-       //fgshfsh String password = "Password123!"; // Example password
-        //while
+        //password vaildation within a method 
+      
         if (user.checkPasswordComplexity(password)) {
             System.out.println("Password suucessfully captured");
         } else {
             System.out.println("Password is not correctly formatted; please ensure that the password contains atleast eight characters, a capital letter, a number and a special character");
         }
-    
+    //checking the username
     if (user.checkUsername(username)) {
             System.out.println("Username succesfully captured");
         } else {
-            System.out.println("Password is not correctly formatted; please ensure that your Username contains an underscore and is no more than five characters in length");
+            System.out.println("Username is not correctly formatted; please ensure that your Username contains an underscore and is no more than five characters in length");
         }
+    //checking the Phone number
     if (user.checkCellPhoneNumber(phone)) {
             System.out.println("Cell phone number successfully added");
         } else {
@@ -54,8 +54,8 @@ public class Assignment {
         }
     
             
-            //
-  System.out.print("Please enternYour Name: ");
+            //input name and surname
+  System.out.print("Please enter Your Name: ");
   String name = input.nextLine();
   user.setName (name);
   System.out.print("Please enter your Surname: ");
