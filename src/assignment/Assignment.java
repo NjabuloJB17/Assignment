@@ -1,9 +1,13 @@
+//NJABULO NCALA
+//ST10490927
+
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
 package assignment;
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,59 +21,146 @@ public class Assignment {
     public static void main(String[] args) {
         // TODO code application logic here
       
-         Scanner input = new Scanner(System.in);
+        
         Class_ASS user = new Class_ASS();
-
+        Message mess = new Message();
           
         
         //enter password, username and phone number
-        System.out.print("Please enter your username: ");
-           String username = input.nextLine();
+       
+           String username = JOptionPane.showInputDialog("Please enter your username: ");
            user.setUsername (username);
-           System.out.println("Please enter your Password: ");
-           String password = input.nextLine();
+           String password = JOptionPane.showInputDialog("Please enter your Password: ");
            user.setPassword (password);
-          System.out.print("Please your Phone Number");
-          String phone = input.nextLine();
+          String phone = JOptionPane.showInputDialog("Please your Phone Number");
           user.setPhone (phone);
-        
+       
         //password vaildation within a method 
       
         if (user.checkPasswordComplexity(password)) {
-            System.out.println("Password suucessfully captured");
+            JOptionPane.showInputDialog("Password suucessfully captured");
         } else {
-            System.out.println("Password is not correctly formatted; please ensure that the password contains atleast eight characters, a capital letter, a number and a special character");
+           JOptionPane.showInputDialog("Password is not correctly formatted; please ensure that the password contains atleast eight characters, a capital letter, a number and a special character");
         }
     //checking the username
     if (user.checkUsername(username)) {
-            System.out.println("Username succesfully captured");
+            JOptionPane.showInputDialog("Username succesfully captured");
         } else {
-            System.out.println("Username is not correctly formatted; please ensure that your Username contains an underscore and is no more than five characters in length");
+            JOptionPane.showInputDialog("Username is not correctly formatted; please ensure that your Username contains an underscore and is no more than five characters in length");
         }
     //checking the Phone number
     if (user.checkCellPhoneNumber(phone)) {
-            System.out.println("Cell phone number successfully added");
+            JOptionPane.showInputDialog("Cell phone number successfully added");
         } else {
-            System.out.println("Cell phone number incorrectly formatted or does not contain international code");
+            JOptionPane.showInputDialog("Cell phone number incorrectly formatted or does not contain international code");
         }
     
             
             //input name and surname
-  System.out.print("Please enter Your Name: ");
-  String name = input.nextLine();
+
+  String name = JOptionPane.showInputDialog("Please enter Your Name: ");
   user.setName (name);
-  System.out.print("Please enter your Surname: ");
-  String surname = input.nextLine();
+
+  String surname = JOptionPane.showInputDialog("Please enter your Surname: ");
   user.setSurname (surname);
   
     if(user.checkPasswordComplexity(password)){
-         System.out.print("Welcome" + name + surname + "it is great to see you again." );
+         JOptionPane.showInputDialog("Welcome" + name + surname + "it is great to see you again." );
     }  else if (user.checkUsername(username)){
-    System.out.print("Welcome" + name + surname + "it is great to see you again." );
-    }else 
-    System.out.print("Username or password inncorrect, please try again ");
+JOptionPane.showInputDialog("Welcome" + name + surname + "it is great to see you again." );
+    }else {
+    JOptionPane.showInputDialog("Username or password inncorrect, please try again ");
    }
-       
+    
+     // the welcome message 
+    JOptionPane.showMessageDialog(null,  "Welcome to QuickChat");
+        
+//creates a ID for the message
+        
+        String uniqueID = mess.generateUniqueID();
+        JOptionPane.showMessageDialog(null,  "Unique ID:"  + uniqueID); 
+    
+// promting the user to choose between 1 to 3 
+    
+    int display =Integer.parseInt(JOptionPane.showInputDialog ("Enter numbers between 1 or 2 or 3:" ));
+         switch(display){
+            case 1:
+                JOptionPane.showMessageDialog(null, "Send messages");
+                break;
+            case 2:
+                JOptionPane.showMessageDialog(null, "Coming soon ");
+                break;
+            case 3:
+                JOptionPane.showMessageDialog(null, "Quit");
+                break;
+
+         }  String menu;
+                
+        while (true) {
+            menu = JOptionPane.showInputDialog(null, "Enter exit to close the form:");
+            if ( menu == null ||menu.equalsIgnoreCase("Quit"))
+              
+            {
+                break; 
+            }
+            JOptionPane.showMessageDialog(null,  "Please enter Quit!");
+            JOptionPane.showMessageDialog(null,  "Goodbye"); 
+        }
+        //enter number and checked it has the correct format
+        if (mess.checkRecipientCell(phone)) {
+            JOptionPane.showInputDialog("Cell phone number successfully added");
+        } else {
+            JOptionPane.showInputDialog("Cell phone number incorrectly formatted or does not contain international code");
+        }
+//while loop for the message 
+        
+          String message = "";
+
+        while (message == null || message.trim().isEmpty()) {
+            message = JOptionPane.showInputDialog(null, "Please enter a message:");
+        }
+
+        JOptionPane.showMessageDialog(null, "You entered: " + message);
+    
+        
+        for(int i = 0; i<size; i++){
+
+
+    
+   //to check if the message is 250 characters or not
+     String text = JOptionPane.showInputDialog("Please enter your Message: ");
+
+        if (mess.vaildateMessage(text)) {
+            JOptionPane.showInputDialog(null,"message is valid.");
+        } else {
+           JOptionPane.showInputDialog(null, "Invalid message. It must be exactly 250 characters long.");
+        }
+    // Message Hash
+    
+    String messageId = "0017";
+    int messageNumber =0;
+    String messageText = "greetings and How are you";
+    String messagehash = mess.MessageHash(messageId, messageNumber, messageText);
+    JOptionPane.showMessageDialog(null, "Message Hash" + mess.MessageHash);
+    
+ 
+    }
+        }
+    
+     
+     
+    
+    
+    
+    }
 }
+        
    
+
+
+
+    
+
+
+
 
