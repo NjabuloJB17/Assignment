@@ -123,7 +123,7 @@ JOptionPane.showInputDialog("Welcome" + name + surname + "it is great to see you
         JOptionPane.showMessageDialog(null, "You entered: " + message);
     
         
-        for(int i = 0; i<size; i++){
+       
 
 
     
@@ -141,19 +141,71 @@ JOptionPane.showInputDialog("Welcome" + name + surname + "it is great to see you
     int messageNumber =0;
     String messageText = "greetings and How are you";
     String messagehash = mess.MessageHash(messageId, messageNumber, messageText);
-    JOptionPane.showMessageDialog(null, "Message Hash" + mess.MessageHash);
+    JOptionPane.showMessageDialog(null, "Message Hash" + messagehash);
     
  
-    }
-        }
     
-     
-     
-    
-    
-    
+        
+       
+        
+       while (true) {
+    int options = Integer.parseInt(JOptionPane.showInputDialog(" 1.Send Message 2.Coming soon 3. Quit"));
+
+    switch (options) {
+        case 1:
+            JOptionPane.showMessageDialog(null, "Send Message!");
+            System.exit(0);
+            break;
+
+        case 2:
+            mess.menu(mess);
+            break;
+
+        case 3:
+            JOptionPane.showMessageDialog(null,"Quit ");
+            break;
+
+        default:
+            JOptionPane.showMessageDialog(null, "Invalid option.");
+            String goodbye;
+                
+        while (true) {
+            goodbye = JOptionPane.showInputDialog(null, "Enter exit to close the form:");
+            if ( goodbye == null ||menu.equalsIgnoreCase("bye"))
+              
+            {
+                break; 
+            }
+            JOptionPane.showMessageDialog(null,  "Please enter Quit!");
+            JOptionPane.showMessageDialog(null,  "Goodbye"); 
     }
 }
+       }
+    }
+}
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+     
+     
+    
+    
+    
+    
+
         
    
 
